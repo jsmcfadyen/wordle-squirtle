@@ -1,5 +1,5 @@
 # Squirtle - the Wordle Scorekeeper
-Stores scores for core Discord Wordle supporters.
+Tour-de-force of storing scores for core Discord Wordle supporters.
 
 Tracks scores for each by username in a specific Discord channel:
 - wordle scores
