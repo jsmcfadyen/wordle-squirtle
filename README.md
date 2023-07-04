@@ -14,7 +14,7 @@ Tracks scores for each by username in a specific Discord channel:
 - cloud hosting db and bot code
 - leaderboard
 
-## Setup
+## Setup (deprecated)
 Set up the `.env` file like `.env.sample`
 
 To install packages, run `npm install`
@@ -30,3 +30,6 @@ Copy `ngroks`'s base Forwarding url into the Discord app settings appended with 
 
 Link to start bot:
 `https://discord.com/oauth2/authorize?client_id=1124486595928674314&permissions=67584&scope=bot`
+
+## Setup Discord.js
+`node index.js` to run Discord.js version
