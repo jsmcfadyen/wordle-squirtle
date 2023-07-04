@@ -6,6 +6,7 @@ Tracks scores for each by username in a specific Discord channel:
 - nyt mini crosswords scores
 
 ## TODO
+- refactor to Discord.js
 - get channel id from interaction
 - get the channel msg data from discord api
 - analyze short term data

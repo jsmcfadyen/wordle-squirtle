@@ -57,7 +57,7 @@ app.post("/interactions", async function (req, res) {
     if (name == "wordle") {
       // get all the data
       const channel_id = process.env.CHANNEL_ID; 
-      const channel_messages = await DiscordRequest(`channels/${channel_id}/messages`) 
+      const channel_messages = await DiscordRequest(`channels/${channel_id}/messages`, {method: 'GET'}) 
 
       // store messages
 
