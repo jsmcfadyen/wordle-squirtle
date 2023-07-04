@@ -6,6 +6,7 @@ Tracks scores for each by username in a specific Discord channel:
 - nyt mini crosswords scores
 
 ## TODO
+- get channel id from interaction
 - get the channel msg data from discord api
 - analyze short term data
 - generate nice stats and a chart
@@ -25,3 +26,6 @@ If there's no public endpoint where Discord can send requests, use `ngrok` to tu
 `ngrok http 3000`
 
 Copy `ngroks`'s base Forwarding url into the Discord app settings appended with `interactions`.
+
+Link to start bot:
+`https://discord.com/oauth2/authorize?client_id=1124486595928674314&permissions=67584&scope=bot`

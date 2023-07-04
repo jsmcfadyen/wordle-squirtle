@@ -12,7 +12,6 @@ import {
   getRandomEmoji,
   DiscordRequest,
 } from "./utils.js";
-import { getShuffledOptions, getResult } from "./game.js";
 import * as rm from 'typed-rest-client/RestClient.js'
 
 // Create an express app
@@ -21,9 +20,6 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 // Parse request body and verifies incoming requests using discord-interactions package
 app.use(express.json({ verify: VerifyDiscordRequest(process.env.PUBLIC_KEY) }));
-
-// Store for in-progress games. In production, you'd want to use a DB
-const activeGames = {};
 
 /**
  * Interactions endpoint URL where Discord will send HTTP requests
@@ -60,12 +56,19 @@ app.post("/interactions", async function (req, res) {
 
     if (name == "wordle") {
       // get all the data
-      const body = DiscordRequest(`/channels/${channel_id}/messages`) 
+      const channel_id = process.env.CHANNEL_ID; 
+      const channel_messages = await DiscordRequest(`channels/${channel_id}/messages`) 
+
+      // store messages
+
+
+      // analyze wordle messages
+
 
       return res.send({
         type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
         data: {
-          content: "Wordle Score: " + getRandomEmoji() + JSON.stringify(body),
+          content: "Wordle Score: " + getRandomEmoji() + JSON.stringify(channel_messages),
         },
       })
     }
@@ -75,3 +78,4 @@ app.post("/interactions", async function (req, res) {
 app.listen(PORT, () => {
   console.log("Listening on port", PORT);
 });
+

@@ -19,7 +19,7 @@ export async function DiscordRequest(endpoint, options) {
   // append endpoint to root API URL
   const url = 'https://discord.com/api/v10/' + endpoint;
   // Stringify payloads
-  if (options.body) options.body = JSON.stringify(options.body);
+  if (options?.body) options.body = JSON.stringify(options.body);
   // Use node-fetch to make requests
   const res = await fetch(url, {
     headers: {
@@ -55,8 +55,4 @@ export async function InstallGlobalCommands(appId, commands) {
 export function getRandomEmoji() {
   const emojiList = ['😭','😄','😌','🤓','😎','😤','🤖','😶‍🌫️','🌏','📸','💿','👋','🌊','✨'];
   return emojiList[Math.floor(Math.random() * emojiList.length)];
-}
-
-export function capitalize(str) {
-  return str.charAt(0).toUpperCase() + str.slice(1);
 }
